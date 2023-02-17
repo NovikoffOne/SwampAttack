@@ -9,12 +9,12 @@ public class M16 : Weapon
     private int _maxCountBullet = 3;
     private int _bulletCount;
     private Transform _shootPoint;
-
+    
     public override void Shoot(Transform shootPoint)
     {
         _shootPoint = shootPoint;
 
-        InvokeRepeating("InstantiateBullet", _delayShot, _coolDownShot);
+        InvokeRepeating(nameof(InstantiateBullet), _delayShot, _coolDownShot);
     }
 
     private void InstantiateBullet()
